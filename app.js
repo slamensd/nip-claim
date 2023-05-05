@@ -5,6 +5,7 @@ const CONTRACT_ABI = 'YOUR_CONTRACT_ABI'; // Replace with your contract ABI
 document.getElementById('connectWalletButton').addEventListener('click', async () => {
     try {
         const providerOptions = {}; // Add any specific provider options if needed
+        const Web3Modal = window.Web3Modal.default;
         const web3Modal = new Web3Modal({ providerOptions });
         const connection = await web3Modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
